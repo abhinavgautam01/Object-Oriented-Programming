@@ -66,8 +66,8 @@ int main() {
         // Sort the array for binary search
         sort(arr.begin(), arr.end());
         cout << "Sorted array for binary search:\n";
-        for (int i : arr) {
-            cout << i << " ";
+        for (int i = 0; i < arr.size(); ++i) {
+            cout << arr[i] << " ";
         }
         cout << endl;
         result = binarySearch(arr, target);
