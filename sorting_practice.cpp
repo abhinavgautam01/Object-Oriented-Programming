@@ -2,9 +2,11 @@
 using namespace std;
 void display(int arr[], int n){
     int i;
+    cout<<"Entered elements :\n";
     for(i=0;i<n;i++){
         cout<<arr[i]<<"\t";
     }
+    cout<<endl;
 }
 void inputArray(int arr[], int n){
     cout<<"Enter your elements for your array:\n";
@@ -25,5 +27,5 @@ int main(){
     display(arr,n);
     cout<<"\nValues before swapping\na : "<<a<<" and b : "<<b<<endl;
     swap(&a,&b);
-    cout<<"\nValues after swapping\na : "<<a<<" and b : "<<b<<endl;
+    cout<<"Values after swapping\na : "<<a<<" and b : "<<b<<endl;
 }
