@@ -2,6 +2,7 @@
 using namespace std;
 void display(int arr[], int n){
     int i;
+    cout<<"Enter your elements for your array:\n";
     for(i=0;i<n;i++){
         cout<<arr[i]<<"\t";
     }
