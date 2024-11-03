@@ -2,12 +2,12 @@
 using namespace std;
 void display(int arr[], int n){
     int i;
-    cout<<"Enter your elements for your array:\n";
     for(i=0;i<n;i++){
         cout<<arr[i]<<"\t";
     }
 }
 void inputArray(int arr[], int n){
+    cout<<"Enter your elements for your array:\n";
     int i;
     for(i=0;i<n;i++){
         cin>>arr[i];
