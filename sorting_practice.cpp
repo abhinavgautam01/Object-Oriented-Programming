@@ -21,7 +21,9 @@ void swap(int *a, int *b){
     *b=temp;
 }
 int main(){
-    int n=5,i,a=1,b=3;
+    int n,i,a=1,b=3;
+    cout<<"Enter number of elements for your array : ";
+    cin>>n;
     int arr[n];
     inputArray(arr,n);
     display(arr,n);
