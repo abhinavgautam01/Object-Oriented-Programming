@@ -3,13 +3,19 @@ using namespace std;
 class student{
     private:
     string name;
-    int rollNumber;
+    string rollNumber;
     float marks;
     public:
-    void setstudents(string studentName, int studentRollNumber, float studentMarks){
-        name=studentName;
-        rollNumber=studentRollNumber;
-        marks=studentMarks;
+    void setStudentsInfo(){         //(string studentName,int studentRollNumber, float studentMarks)
+        cout<<"Enter student's Name: ";
+        getline(cin, name);
+        cout<<"Enter student's Roll Number: ";
+        cin>>rollNumber;
+        cout<<"Enter student's Marks: ";
+        cin>>marks;
+        // name=studentName;
+        // rollNumber=studentRollNumber;
+        // marks=studentMarks;
     }
     void display() const{
         cout<<"Name: "<<name<<endl;
@@ -19,7 +25,7 @@ class student{
 };
 int main(){
     student student1;
-    student1.setstudents("Abhinav",3,7.98);
+    student1.setStudentsInfo();
     student1.display();
     return 0;
 }
