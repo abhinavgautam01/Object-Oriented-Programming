@@ -25,11 +25,25 @@ public:
             return;
         }
         cout << "Enter account holder's name: ";
+        // getline(cin, accountHolderName);     we cannot simply use this because of whitespaces, which are left because of the previous execution...
         getline(cin >> ws, accountHolderName); // to capture full name
+
         cout << "Enter account number: ";
         cin >> accountNumber;
-        balance = 0.0; // Starting balance
-        cout << "Account created successfully.\n";
+
+        // balance = 0.0; // Starting balance
+        // cout << "Account created successfully.\n";
+        // accountCreated = true;
+
+        // Prompt for initial balance
+        cout << "Enter initial balance: $";
+        cin >> balance;
+        while (balance < 0) {
+            cout << "Initial balance cannot be negative. Please enter a positive amount: $";
+            cin >> balance;
+        }
+
+        cout << "Account created successfully with a balance of $" << balance << ".\n";
         accountCreated = true;
     }
 
