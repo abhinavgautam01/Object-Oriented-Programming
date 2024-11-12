@@ -109,9 +109,9 @@ int main() {
     while (true) {
         cout << "\n=== Bank Menu ===\n";
         cout << "1. Create Account\n";
-        cout << "2. Account Summary\n";
-        cout << "3. Deposit\n";
-        cout << "4. Withdraw\n";
+        cout << "2. Display Account Summary\n";
+        cout << "3. Deposit Money\n";
+        cout << "4. Withdraw Money\n";
         cout << "5. Apply Interest\n";
         cout << "6. Exit\n";
         cout << "Enter your choice: ";
