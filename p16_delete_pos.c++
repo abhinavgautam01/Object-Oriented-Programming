@@ -3,6 +3,7 @@
 using namespace std;
 
 void deleteElement(int arr[], int &n, int position) {
+    position=position-1;
     if (position < 0 || position >= n) {
         cout << "Invalid position!" << endl;
         return;
@@ -45,7 +46,7 @@ int main() {
 
     int position;
 
-    cout << "Enter the position to delete (0 to " << (n - 1) << "): ";
+    cout << "Enter the position to delete (1 to " << (n) << "): ";
     cin >> position;
 
     deleteElement(arr, n, position);

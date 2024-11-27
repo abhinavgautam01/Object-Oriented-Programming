@@ -1,5 +1,4 @@
 #include <iostream>
-
 using namespace std;
 
 int main() {
@@ -19,36 +18,35 @@ int main() {
         return 1;
     }
 
-    // Dynamic memory allocation for matrices
-    int** matrixA = new int*[rowsA];
-    int** matrixB = new int*[rowsB];
-    int** product = new int*[rowsA];
+    // Declare matrices with fixed maximum size
+    int matrixA[100][100], matrixB[100][100], product[100][100];
 
-    for (int i = 0; i < rowsA; i++)
-        matrixA[i] = new int[colsA];
-
-    for (int i = 0; i < rowsB; i++)
-        matrixB[i] = new int[colsB];
-
-    for (int i = 0; i < rowsA; i++)
-        product[i] = new int[colsB]();
-
-    // Input for first matrix
+    // Input for the first matrix
     cout << "Enter elements of the first matrix (A):" << endl;
-    for (int i = 0; i < rowsA; i++)
-        for (int j = 0; j < colsA; j++)
+    for (int i = 0; i < rowsA; i++) {
+        for (int j = 0; j < colsA; j++) {
             cin >> matrixA[i][j];
+        }
+    }
 
-    // Input for second matrix
+    // Input for the second matrix
     cout << "Enter elements of the second matrix (B):" << endl;
-    for (int i = 0; i < rowsB; i++)
-        for (int j = 0; j < colsB; j++)
+    for (int i = 0; i < rowsB; i++) {
+        for (int j = 0; j < colsB; j++) {
             cin >> matrixB[i][j];
+        }
+    }
+
+    // Initialize product matrix to 0
+    for (int i = 0; i < rowsA; i++) {
+        for (int j = 0; j < colsB; j++) {
+            product[i][j] = 0;
+        }
+    }
 
     // Multiplying matrices
     for (int i = 0; i < rowsA; i++) {
         for (int j = 0; j < colsB; j++) {
-            product[i][j] = 0; // Initialize product matrix element
             for (int k = 0; k < colsA; k++) {
                 product[i][j] += matrixA[i][k] * matrixB[k][j];
             }
@@ -58,22 +56,11 @@ int main() {
     // Displaying the result
     cout << "Product of the matrices (A * B) is:" << endl;
     for (int i = 0; i < rowsA; i++) {
-        for (int j = 0; j < colsB; j++)
+        for (int j = 0; j < colsB; j++) {
             cout << product[i][j] << " ";
+        }
         cout << endl;
     }
-
-    // Freeing allocated memory
-    for (int i = 0; i < rowsA; i++)
-        delete[] matrixA[i];
-    for (int i = 0; i < rowsB; i++)
-        delete[] matrixB[i];
-    for (int i = 0; i < rowsA; i++)
-        delete[] product[i];
-
-    delete[] matrixA;
-    delete[] matrixB;
-    delete[] product;
 
     return 0;
 }

@@ -3,6 +3,7 @@
 using namespace std;
 
 void insertElement(int arr[], int &n, int element, int position) {
+    position -=1;    
     if (position < 0 || position > n) {
         cout << "Invalid position!" << endl;
         return;
@@ -43,7 +44,7 @@ int main() {
 
     cout << "Enter the element to insert: ";
     cin >> element;
-    cout << "Enter the position to insert (0 to " << n << "): ";
+    cout << "Enter the position to insert (1 to " << (n+1) << "): ";
     cin >> position;
 
     insertElement(arr, n, element, position);
