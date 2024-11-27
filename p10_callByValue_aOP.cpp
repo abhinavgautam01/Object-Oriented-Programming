@@ -1,35 +1,52 @@
 #include <iostream>
 using namespace std;
 
-void add(int a, int b) {
-    cout << "Addition: " << a + b << endl;
+int add(int, int);
+int sub(int, int);
+int mul(int, int);
+int divi(int, int);
+int mod(int, int);
+
+int main() {
+    int a, b;
+    cout << "Enter two numbers: ";
+    cin >> a >> b;
+
+    cout << "Sum of " << a << " and " << b << " is " << add(a, b) << endl;
+    cout << "Subtraction of " << a << " and " << b << " is " << sub(a, b) << endl;
+    cout << "Multiplication of " << a << " and " << b << " is " << mul(a, b) << endl;
+    cout << "Division of " << a << " and " << b << " is " << divi(a, b) << endl;
+    cout << "Modulus of " << a << " and " << b << " is " << mod(a, b) << endl;
+
+    return 0;
 }
 
-void subtract(int a, int b) {
-    cout << "Subtraction: " << a - b << endl;
+int add(int x, int y) {
+    return x + y;
 }
 
-void multiply(int a, int b) {
-    cout << "Multiplication: " << a * b << endl;
+int sub(int x, int y) {
+    return x - y;
 }
 
-void divide(int a, int b) {
-    if (b != 0) {
-        cout << "Division: " << static_cast<double>(a) / b << endl;
-    } else {
-        cout << "Division by zero is not allowed." << endl;
+int mul(int x, int y) {
+    return x * y;
+}
+
+int divi(int x, int y) {
+    if (y != 0)
+        return x / y;
+    else {
+        cout << "Error: Division by zero!" << endl;
+        return 0;
     }
 }
 
-int main() {
-    int num1, num2;
-    cout << "Enter two integers: ";
-    cin >> num1 >> num2;
-
-    add(num1, num2);
-    subtract(num1, num2);
-    multiply(num1, num2);
-    divide(num1, num2);
-
-    return 0;
+int mod(int x, int y) {
+    if (y != 0)
+        return x % y;
+    else {
+        cout << "Error: Modulus by zero!" << endl;
+        return 0;
+    }
 }
