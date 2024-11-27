@@ -6,7 +6,7 @@ void performOperations(int& a, int& b, int& sum, int& difference, int& product, 
     difference = a - b;
     product = a * b;
     if (b != 0) {
-        quotient = static_cast<double>(a) / b;
+        quotient = a/b;
     } else {
         cout << "Division by zero is not allowed." << endl;
         quotient = 0; // Default value
